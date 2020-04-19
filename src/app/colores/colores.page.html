@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-grid>
+    <div class="centrado" id="header">
+      <ion-row>
+        <ion-col size="3">
+          <img src="../../assets/images/backbutton.ico" class="flag" routerLink="/seleccion-de-juego">
+        </ion-col>
+        <ion-col size="3">
+          <img src="../../assets/images/flageu.png" class="flag" id="flagEu"
+            (click)="seleccionarIdiomaIngles()" alt="bandera Estados Unidos">
+        </ion-col>
+        <ion-col size="3">
+          <img src="../../assets/images/flagbr.png" class=" flag" id="flagBr"
+            (click)="seleccionarIdiomaPortugues(this)" alt="bandera Brazil">
+        </ion-col>
+        <ion-col size="3">
+          <img src="../../assets/images/flauarg.png" class=" flag" id="flagArg"
+            (click)="seleccionarIdiomaLatino()" alt="bandera Argentina">
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-row class="centrado">
+      <ion-col size="6" size-sm="2" *ngFor="let color of colores">
+          <img src="../../assets/images/colores/{{color}}.png" (click)="reproducirAudio(color)" alt=""
+          class="imagen-Icon animal-Icon">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

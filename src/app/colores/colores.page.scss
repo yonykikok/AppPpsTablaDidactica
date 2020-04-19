@@ -1,0 +1,51 @@
+ion-content{
+    --background:none;
+    background: url("../../assets/images/background-colors.jpg") no-repeat center / cover;
+}
+.centrado{
+    text-align: center;
+}
+.imagen-Icon{
+    width: 6em;
+    height: 6em;
+}
+
+.flag{
+    width: 5em;
+    height: 5em;
+}
+.centrado{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 3%;
+}
+#header{
+    --background:none;
+    background-color: rgba(218, 51, 51, 0);
+    // background: url("../../assets/images/background-jungle.jpg") no-repeat center / cover;
+}
+.flag, .animal-Icon{
+    -webkit-transition:all 1s ease;
+    -moz-transition:all 1s ease;
+    -o-transition:all 1s ease;
+}
+.flag-active{
+    height: 6em;
+    width: 6em;
+    border-radius: 30%;
+    background-color: rgba(255, 255, 255, 0.534);
+}
+.animal-Icon:hover
+{
+    height: 7em;
+    width: 7em;
+    border-radius: 30%;
+    background-color: rgba(255, 255, 255, 0.534);
+}
+.flag:hover{
+    height: 6em;
+    width: 6em;
+    border-radius: 30%;
+    background-color: rgba(255, 255, 255, 0.534);
+    
+}
