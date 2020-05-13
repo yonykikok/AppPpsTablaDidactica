@@ -12,7 +12,14 @@ export class AnimalesPage implements OnInit {
   public brActive: boolean = false;
   public argActive: boolean = true;
   public euActive: boolean = false;
-
+  public temas = false;
+  public lenguajes = false;
+ toggleTemas() {
+    this.temas ? this.temas = false : this.temas = true;
+  }
+  toggleLenguajes() {
+    this.lenguajes ? this.lenguajes = false : this.lenguajes = true;
+  }
   public animales: string[] = ["Caballo", "Cebra", "Chancho",
     "Elefante", "Gallina", "Gallo",
     "Pollito", "Gato", "Girafa",
@@ -21,15 +28,26 @@ export class AnimalesPage implements OnInit {
     "Tucan", "Vaca", "Zorro"];
 
   constructor(private router: Router) { }
+  ionViewWillEnter(){
+    this.seleccionarIdiomaLatino();
+    setTimeout(() => {
 
+      let flagArg = document.getElementById('flagArg');
+      flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    }, 200);
+  }
   redirecionar() {
     this.router.navigateByUrl('/colores');
   }
   ngOnInit() {
-    let flagArg = document.getElementById('flagArg');
-    flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    setTimeout(() => {
+      
+      let flagArg = document.getElementById('flagArg');
+      flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    }, 200);
   }
   DesactivarFlag(flag) {
+    flag.removeAttribute('class');
     flag.setAttribute('class', "imagen-Icon flag");//setear bandera en active.
   }
   ActivarFlag(flag) {

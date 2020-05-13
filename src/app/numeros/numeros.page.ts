@@ -6,20 +6,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./numeros.page.scss'],
 })
 export class NumerosPage implements OnInit {
+  public temas = false;
+  public lenguajes = false;
   public brActive: boolean = false;
   public argActive: boolean = true;
   public euActive: boolean = false;
-  public idiomaSeleccionado:string="ar";
-  public numeros: number[] = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
+  public idiomaSeleccionado: string = "ar";
+  public numeros: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   constructor() { }
+  ionViewWillEnter(){
+    this.seleccionarIdiomaLatino();
+    setTimeout(() => {
 
+      let flagArg = document.getElementById('flagArg');
+      flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    }, 200);
+  }
+  toggleTemas() {
+    this.temas ? this.temas = false : this.temas = true;
+  }
+  toggleLenguajes() {
+    this.lenguajes ? this.lenguajes = false : this.lenguajes = true;
+    console.log(this.lenguajes);
+  }
   ngOnInit() {
-    let flagArg = document.getElementById('flagArg');
-    flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    setTimeout(() => {
+
+      let flagArg = document.getElementById('flagArg');
+      flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    }, 200);
   }
 
 
   DesactivarFlag(flag) {
+    flag.removeAttribute('class');
     flag.setAttribute('class', "imagen-Icon flag");//setear bandera en active.
   }
   ActivarFlag(flag) {
@@ -29,7 +49,7 @@ export class NumerosPage implements OnInit {
     this.brActive = true;
     this.argActive = false;
     this.euActive = false;
-    this.idiomaSeleccionado="br";
+    this.idiomaSeleccionado = "br";
     let audio = new Audio("../../assets/audios/flags/Flagbr.wav");
     audio.play();
     let flagEu = document.getElementById('flagEu');
@@ -46,7 +66,7 @@ export class NumerosPage implements OnInit {
     this.euActive = true;
     let audio = new Audio("../../assets/audios/flags/Flageng.wav");
     audio.play();
-    this.idiomaSeleccionado="eng";
+    this.idiomaSeleccionado = "eng";
     let flagEu = document.getElementById('flagEu');
     let flagBr = document.getElementById('flagBr');
     let flagArg = document.getElementById('flagArg');
@@ -59,7 +79,7 @@ export class NumerosPage implements OnInit {
     this.brActive = false;
     this.argActive = true;
     this.euActive = false;
-    this.idiomaSeleccionado="ar"; 
+    this.idiomaSeleccionado = "ar";
     let audio = new Audio("../../assets/audios/flags/Flagarg.wav");
     audio.play();
     let flagEu = document.getElementById('flagEu');

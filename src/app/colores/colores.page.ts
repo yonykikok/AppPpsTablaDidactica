@@ -10,12 +10,31 @@ export class ColoresPage implements OnInit {
   public argActive: boolean = true;
   public euActive: boolean = false;
   public idiomaSeleccionado: string = "arg";
-  public colores: string[] = ["negro","azul","gris","verde","naranja","violeta","rojo","blanco","amarillo","celeste"];
+  public colores: string[] = ["negro", "azul", "gris", "verde", "naranja", "violeta", "rojo", "blanco", "amarillo", "celeste"];
   constructor() { }
+  public temas = false;
+  public lenguajes = false;
+  toggleTemas() {
+    this.temas ? this.temas = false : this.temas = true;
+  }
+  toggleLenguajes() {
+    this.lenguajes ? this.lenguajes = false : this.lenguajes = true;
+    console.log(this.lenguajes);
+  }
+  ionViewWillEnter(){
+    this.seleccionarIdiomaLatino();
+    setTimeout(() => {
 
+      let flagArg = document.getElementById('flagArg');
+      flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    }, 200); 
+  }
   ngOnInit() {
-    let flagArg = document.getElementById('flagArg');
-    flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    setTimeout(() => {
+
+      let flagArg = document.getElementById('flagArg');
+      flagArg.setAttribute('class', "imagen-Icon flag flag-active");//setear bandera en active.
+    }, 200);
   }
 
 
